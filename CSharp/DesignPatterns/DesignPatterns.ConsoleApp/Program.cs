@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Business.Models.Commerce;
+using DesignPatterns.Business.Models.Shipping.Factories;
 using DesignPatterns.FactoryPattern.Before;
 using System;
 
@@ -40,7 +41,7 @@ public class Program
         order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
         #endregion
 
-        var cart = new ShoppingCart(order);
+        var cart = new ShoppingCart(order, new StandardShippingProviderFactory());
 
         var shippingLabel = cart.Finalize();
 

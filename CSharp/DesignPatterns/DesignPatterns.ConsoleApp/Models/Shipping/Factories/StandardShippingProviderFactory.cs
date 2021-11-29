@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DesignPatterns.Business.Models.Shipping
+namespace DesignPatterns.Business.Models.Shipping.Factories
 {
-    public class ShippingProviderFactory
+    // Standard "by country name"
+    public class StandardShippingProviderFactory : ShippingProviderFactory
     {
-        public static ShippingProvider CreateShippingProvider(string country)
+        public override ShippingProvider CreateShippingProvider(string country)
         {
             #region Create Shipping Provider
             ShippingProvider shippingProvider;
