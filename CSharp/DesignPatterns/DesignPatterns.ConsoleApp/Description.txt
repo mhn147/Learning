@@ -1,0 +1,11 @@
+﻿What is a Factory?
+ - An object for creating objects. (for "heavy" instantiation)
+  => reuse
+
+Flavors:
+ - Simple Factory
+ - Factory Method
+ - Abstract Factory
+
+The client code no longer needs to know about the internal instantiation logic.
+
