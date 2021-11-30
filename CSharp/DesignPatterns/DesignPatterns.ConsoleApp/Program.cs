@@ -44,17 +44,13 @@ public class Program
 
         IPurchaseProviderFactory purchaseProviderFactory;
 
-        if (order.Sender.Country == "Sweden")
+        var factoryProvider = new PurchaseProviderFactoryProvider();
+
+        purchaseProviderFactory = factoryProvider.CreateFactoryFor(order.Sender.Country);
+
+        if (purchaseProviderFactory == null)
         {
-            purchaseProviderFactory = new SwedenPurchaseProviderFactory();
-        }
-        else if (order.Sender.Country == "Australia")
-        {
-            purchaseProviderFactory = new AustraliaPurchaseProviderFactory();
-        }
-        else
-        {
-            throw new ArgumentException("...");
+            throw new ArgumentException("Sender Country has no purchase provider.");
         }
 
         var cart = new ShoppingCart(order, purchaseProviderFactory);
