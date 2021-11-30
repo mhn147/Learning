@@ -9,7 +9,9 @@ Why?
 Flavors:
  - Simple Factory (Simple Factory Class)
  - Factory Method 
- - Abstract Factory
+ - Abstract Factory:
+  - In most cases Simple or Method Factory will suffice. The abstract factory encapsulate a group of factories tha have a common theme
+    Without specifying their concrete classes.
 
 The client code no longer needs to know about the internal instantiation logic.
 
