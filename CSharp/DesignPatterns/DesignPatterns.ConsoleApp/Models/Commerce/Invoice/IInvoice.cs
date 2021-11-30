@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.FactoryPattern.Models.Commerce
+namespace DesignPatterns.FactoryPattern.Models.Commerce.Invoice
 {
     public interface IInvoice
     {

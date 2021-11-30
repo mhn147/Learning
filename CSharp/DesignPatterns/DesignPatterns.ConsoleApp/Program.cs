@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Business.Models.Commerce;
 using DesignPatterns.Business.Models.Shipping.Factories;
-using DesignPatterns.FactoryPattern.Before;
+using DesignPatterns.FactoryPattern;
 using DesignPatterns.FactoryPattern.Models;
 using System;
 

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.FactoryPattern.Before;
+namespace DesignPatterns.FactoryPattern;
 
 public class ShoppingCart
 {

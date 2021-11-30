@@ -4,6 +4,7 @@
  - Constructor optional parameter hell
  - Allows for a flexbible and extensible application (changing the implementation of the ShippingProvider, or introduction a new one, without having to change the 
  implementation of the ShippingCart).
+ - Can be very useful to mock objects when testing.
 
 ## What is a Factory?
  - Objection creatiion (non-piecewise, unlike Builder) can be outsourced to:
