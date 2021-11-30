@@ -32,7 +32,7 @@
  - Known Uses
  - Related Patterns
 
-  ### The Bare Minumum to Know (For Awekening);
+  ### The Bare Minumum to Know (For Awekening): 
    - Name(s)
    - Intent
    - Motivation and Applicability

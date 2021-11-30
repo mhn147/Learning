@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.Business.Models.Commerce;
 using DesignPatterns.Business.Models.Shipping.Factories;
 using DesignPatterns.FactoryPattern.Before;
+using DesignPatterns.FactoryPattern.Models;
 using System;
 
 namespace DesignPatterns.ConsoleApp;
@@ -41,7 +42,22 @@ public class Program
         order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
         #endregion
 
-        var cart = new ShoppingCart(order, new StandardShippingProviderFactory());
+        IPurchaseProviderFactory purchaseProviderFactory;
+
+        if (order.Sender.Country == "Sweden")
+        {
+            purchaseProviderFactory = new SwedenPurchaseProviderFactory();
+        }
+        else if (order.Sender.Country == "Australia")
+        {
+            purchaseProviderFactory = new AustraliaPurchaseProviderFactory();
+        }
+        else
+        {
+            throw new ArgumentException("...");
+        }
+
+        var cart = new ShoppingCart(order, purchaseProviderFactory);
 
         var shippingLabel = cart.Finalize();
 
