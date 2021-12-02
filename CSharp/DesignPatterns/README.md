@@ -1,4 +1,4 @@
-## What is a Design Pattern?
+# What is a Design Pattern?
  - General, reusable solution to a commonly occuring [code design] problem with a givin context
 
 ## Why should I learn design patterns?
