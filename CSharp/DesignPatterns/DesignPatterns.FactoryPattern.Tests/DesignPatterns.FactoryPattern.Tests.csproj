@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesignPatterns.ConsoleApp\DesignPatterns.FactoryPattern.csproj" />
+    <ProjectReference Include="..\DesignPatterns.FactoryPattern\DesignPatterns.FactoryPattern.csproj" />
   </ItemGroup>
 
 </Project>
