@@ -4,6 +4,7 @@ Incompatible interfaces between a client and a service-provider (interface calle
 # Definition:
  - Adapters convert the interface of one class (service-provider) into an interface a client expects.
  - Adapters also known as wrappers, because they wrap incompatible object into a compatible one.
+ - A construct which adapts an existing interface X to conform to the required interface Y.
 
 # Kinds of Adapters:
 ## Object Adapters (most used):

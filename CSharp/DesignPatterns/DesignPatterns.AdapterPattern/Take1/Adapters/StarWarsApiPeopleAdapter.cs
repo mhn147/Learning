@@ -1,8 +1,6 @@
 ﻿using DesignPatterns.AdapterPattern.Models;
 using DesignPatterns.AdapterPattern.Providers;
-using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace DesignPatterns.AdapterPattern.Adapters;

@@ -7,7 +7,7 @@
  - Can be very useful to mock objects when testing.
 
 ## What is a Factory?
- - Objection creatiion (non-piecewise, unlike Builder) can be outsourced to:
+ - Object creation (non-piecewise, unlike Builder) can be outsourced to:
    - A separate "static" function (Factory Method)
    - That may exist in a separate class (Factory)
    - Can create families of factories with Abstract Factory

@@ -1,13 +1,5 @@
 ﻿using DesignPatterns.AdapterPattern.Adapters;
-using DesignPatterns.AdapterPattern.Enums;
 using DesignPatterns.AdapterPattern.Models;
-using DesignPatterns.AdapterPattern.Providers;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
