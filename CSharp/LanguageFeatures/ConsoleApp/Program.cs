@@ -4,13 +4,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        int? a = 28;
-        int b = a ?? -1;
-        Console.WriteLine($"b is {b}");  // output: b is 28
-
-        int? c = null;
-        int d = c ?? -1;
-        Console.WriteLine($"d is {d}");  // output: d is -1
+        
     }
 
     private static void NullableVariableTypes()
