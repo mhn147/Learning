@@ -5,68 +5,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.FactoryPattern.Tests
+namespace DesignPatterns.FactoryPattern.Tests;
+
+public abstract class OrderFactory
 {
-    public abstract class OrderFactory
+    protected abstract Order CreateOrder();
+
+    public Order GetOrder()
     {
-        protected abstract Order CreateOrder();
+        var order = CreateOrder();
 
-        public Order GetOrder()
-        {
-            var order = CreateOrder();
+        order.LineItems.Add(
+            new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
 
-            order.LineItems.Add(
-                new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
+        order.LineItems.Add(
+            new Item("CONSULTING", "Build a website", decimal.MaxValue), 1);
 
-            order.LineItems.Add(
-                new Item("CONSULTING", "Build a website", decimal.MaxValue), 1);
-
-            return order;
-        }
+        return order;
     }
+}
 
-    public class StandardOrderFactory : OrderFactory
+public class StandardOrderFactory : OrderFactory
+{
+    protected override Order CreateOrder()
     {
-        protected override Order CreateOrder()
+        var order = new Order
         {
-            var order = new Order
+            Recipient = new Address
             {
-                Recipient = new Address
-                {
-                    To = "Filip Ekberg",
-                    Country = "Sweden"
-                },
-                Sender = new Address
-                {
-                    To = "Someone else",
-                    Country = "Sweden"
-                },
-                TotalWeight = 100
-            };
+                To = "Filip Ekberg",
+                Country = "Sweden"
+            },
+            Sender = new Address
+            {
+                To = "Someone else",
+                Country = "Sweden"
+            },
+            TotalWeight = 100
+        };
 
-            return order;
-        }
+        return order;
     }
-    public class InternationalOrderFactory : OrderFactory
+}
+public class InternationalOrderFactory : OrderFactory
+{
+    protected override Order CreateOrder()
     {
-        protected override Order CreateOrder()
+        var order = new Order
         {
-            var order = new Order
+            Recipient = new Address
             {
-                Recipient = new Address
-                {
-                    To = "Filip Ekberg",
-                    Country = "Sweden"
-                },
-                Sender = new Address
-                {
-                    To = "Someone else",
-                    Country = "Tunisia"
-                },
-                TotalWeight = 500
-            };
+                To = "Filip Ekberg",
+                Country = "Sweden"
+            },
+            Sender = new Address
+            {
+                To = "Someone else",
+                Country = "Tunisia"
+            },
+            TotalWeight = 500
+        };
 
-            return order;
-        }
+        return order;
     }
 }

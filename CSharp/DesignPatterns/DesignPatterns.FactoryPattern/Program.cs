@@ -1,9 +1,4 @@
-﻿using DesignPatterns.Business.Models.Commerce;
-using DesignPatterns.Business.Models.Shipping.Factories;
-using DesignPatterns.FactoryPattern;
-using DesignPatterns.FactoryPattern.Models;
-using DesignPatterns.FactoryPattern.Take2;
-using System;
+﻿using DesignPatterns.FactoryPattern.Take2;
 
 namespace DesignPatterns.ConsoleApp;
 
