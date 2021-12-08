@@ -20,3 +20,24 @@ are often used to model shared resources, like the file system or a shared netwo
    - Called when the first time any static member of a type is referenced.
    - Make sure to use an explicit static constructor to avoid issues with the C# compiler and beforeFieldInit.
    - BeforeFieldInit is a compiler trick that let's the compiler add a call to the static constructor sooner (default behavior)
+
+## Anti-Pattern?:
+  - Difficult to test due to shared state
+  - Doesn't follow Separation of Concern
+  - Doesn't follow Single Responsibility
+  - Doesn't follow DRY
+  - Better alternatives exist
+
+## Singleton vs Static Class:
+  - Singletons implement interfaces, statics can't.
+  - Singletons can be instantiated (only once) and used as arguments and variables, statics can't.
+  - Singletons supports polymorphism, statics are procedural.
+  - Singleton can have state, statics only access the global state
+  - Singleton can be serialized.
+
+## Singletons and IoC/DI Containers:
+  - .NET Core has built-in support for IoC/DI Containers.
+  - Containers manage abstraction-implementation mapping (IFoo <-> FooImpl1, IFoo <-> FooImpl2).
+  - Containers manages instance lifetime
+  - In apps that leverage containers, classes typically request dependencies via the constructor (ideally request all of the dependencies)
+  - => Manage lifetime using containers, not class design
