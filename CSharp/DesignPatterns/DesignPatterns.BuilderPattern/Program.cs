@@ -28,5 +28,12 @@ public class Program
         sb.Append("</ul>");
 
         Console.WriteLine(sb);
+
+        Console.WriteLine("****");
+
+        var builder = new HtmlBuilder("ul");
+        builder.AddChild("li", "hello");
+        builder.AddChild("li", "world");
+        Console.WriteLine(builder);
     }
 }
