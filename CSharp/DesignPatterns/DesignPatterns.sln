@@ -16,11 +16,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.AdapterPatte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.FactoryPattern", "DesignPatterns.FactoryPattern\DesignPatterns.FactoryPattern.csproj", "{10AE1283-DBBD-4D3E-B3F4-7834D9813263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.AdapterPattern.Tests", "DesignPatterns.AdapterPattern.Tests\DesignPatterns.AdapterPattern.Tests.csproj", "{373A8A62-C696-4D81-8088-9D3C55A9876F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.AdapterPattern.Tests", "DesignPatterns.AdapterPattern.Tests\DesignPatterns.AdapterPattern.Tests.csproj", "{373A8A62-C696-4D81-8088-9D3C55A9876F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.SingletonPattern", "DesignPatterns.SingletonPattern\DesignPatterns.SingletonPattern.csproj", "{AC8F6B01-D25D-4FCA-82E9-F2B8990E3C4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.SingletonPattern", "DesignPatterns.SingletonPattern\DesignPatterns.SingletonPattern.csproj", "{AC8F6B01-D25D-4FCA-82E9-F2B8990E3C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.SingletonPattern.Tests", "DesignPatterns.SingletonPattern.Tests\DesignPatterns.SingletonPattern.Tests.csproj", "{2B9A9483-7F07-4892-85A8-FC3099240063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.SingletonPattern.Tests", "DesignPatterns.SingletonPattern.Tests\DesignPatterns.SingletonPattern.Tests.csproj", "{2B9A9483-7F07-4892-85A8-FC3099240063}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.BuilderPattern", "DesignPatterns.BuilderPattern\DesignPatterns.BuilderPattern.csproj", "{D44531A0-CE59-4BF8-BD7F-F4CBB14E8D1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{2B9A9483-7F07-4892-85A8-FC3099240063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B9A9483-7F07-4892-85A8-FC3099240063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B9A9483-7F07-4892-85A8-FC3099240063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44531A0-CE59-4BF8-BD7F-F4CBB14E8D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44531A0-CE59-4BF8-BD7F-F4CBB14E8D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44531A0-CE59-4BF8-BD7F-F4CBB14E8D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44531A0-CE59-4BF8-BD7F-F4CBB14E8D1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

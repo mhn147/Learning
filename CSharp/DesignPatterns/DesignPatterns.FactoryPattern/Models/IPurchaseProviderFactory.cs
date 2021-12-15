@@ -9,66 +9,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.FactoryPattern.Models
+namespace DesignPatterns.FactoryPattern.Models;
+
+public interface IPurchaseProviderFactory
 {
-    public interface IPurchaseProviderFactory
+    ShippingProvider CreateShippingProvider(Order order);
+    IInvoice CreateInvoice(Order order);
+    ISummary CreateSummary(Order order);
+}
+
+public class AustraliaPurchaseProviderFactory : IPurchaseProviderFactory
+{
+    public IInvoice CreateInvoice(Order order)
     {
-        ShippingProvider CreateShippingProvider(Order order);
-        IInvoice CreateInvoice(Order order);
-        ISummary CreateSummary(Order order);
+        return new GSTInvoice();
     }
 
-    public class AustraliaPurchaseProviderFactory : IPurchaseProviderFactory
+    public ShippingProvider CreateShippingProvider(Order order)
     {
-        public IInvoice CreateInvoice(Order order)
-        {
-            return new GSTInvoice();
-        }
+        var shippingProviderFactory = new StandardShippingProviderFactory();
 
-        public ShippingProvider CreateShippingProvider(Order order)
-        {
-            var shippingProviderFactory = new StandardShippingProviderFactory();
-
-            return shippingProviderFactory.GetShippingProvider("Australia");
-        }
-
-        public ISummary CreateSummary(Order order)
-        {
-            return new CsvSummary();
-        }
+        return shippingProviderFactory.GetShippingProvider("Australia");
     }
 
-    public class SwedenPurchaseProviderFactory : IPurchaseProviderFactory
+    public ISummary CreateSummary(Order order)
     {
-        public IInvoice CreateInvoice(Order order)
-        {
-            if (order.Recipient.Country != order.Sender.Country)
-            {
-                return new NoVATInvoice(); 
-            }
+        return new CsvSummary();
+    }
+}
 
-            return new VATInvoice();
+public class SwedenPurchaseProviderFactory : IPurchaseProviderFactory
+{
+    public IInvoice CreateInvoice(Order order)
+    {
+        if (order.Recipient.Country != order.Sender.Country)
+        {
+            return new NoVATInvoice(); 
         }
 
-        public ShippingProvider CreateShippingProvider(Order order)
+        return new VATInvoice();
+    }
+
+    public ShippingProvider CreateShippingProvider(Order order)
+    {
+        ShippingProviderFactory shippingProviderFactory;
+
+        if (order.Sender.Country != order.Recipient.Country)
         {
-            ShippingProviderFactory shippingProviderFactory;
-
-            if (order.Sender.Country != order.Recipient.Country)
-            {
-                shippingProviderFactory = new GlobalExpressShippingProviderFactory();
-            }
-            else
-            {
-                shippingProviderFactory = new StandardShippingProviderFactory();
-            }
-
-            return shippingProviderFactory.GetShippingProvider("Australia");
+            shippingProviderFactory = new GlobalExpressShippingProviderFactory();
+        }
+        else
+        {
+            shippingProviderFactory = new StandardShippingProviderFactory();
         }
 
-        public ISummary CreateSummary(Order order)
-        {
-            return new EmailSummary();
-        }
+        return shippingProviderFactory.GetShippingProvider("Australia");
+    }
+
+    public ISummary CreateSummary(Order order)
+    {
+        return new EmailSummary();
     }
 }

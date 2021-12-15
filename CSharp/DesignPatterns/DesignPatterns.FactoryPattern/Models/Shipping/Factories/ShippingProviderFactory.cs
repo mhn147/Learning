@@ -7,7 +7,7 @@ namespace DesignPatterns.Business.Models.Shipping.Factories
 {
     public abstract class ShippingProviderFactory
     {
-        public abstract ShippingProvider CreateShippingProvider(string Country);
+        public abstract ShippingProvider CreateShippingProvider(string country);
 
         public ShippingProvider GetShippingProvider(string country)
         {
